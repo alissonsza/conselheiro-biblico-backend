@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conselheiro Bíblico Inteligente</title>
+  <title>Conselheiro Bíblico .IA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,15 +33,18 @@
   </div>
 
   <!-- Modal Contribuição -->
-  <div id="modalContribuir" class="modal">
-    <div class="modal-conteudo">
-      <span class="fechar" onclick="fecharContribuicao()">&times;</span>
-      <h2>Apoie nosso projeto 🙏</h2>
-      <p>Sua contribuição é fundamental para continuarmos.</p>
-      <button onclick="window.open('https://www.paypal.com/seulink', '_blank')">Doar com PayPal</button>
-      <p><strong>PIX:</strong> sua-chave-pix-aqui</p>
-    </div>
+ <!-- Modal Contribuição -->
+<div id="modalContribuir" class="modal">
+  <div class="modal-conteudo">
+    <span class="fechar" onclick="fecharContribuicao()">&times;</span>
+    <h2>Apoie nosso projeto 🙏</h2>
+    <p>Sua contribuição nos ajuda a manter o site funcionando!</p>
+    <p><strong>PIX:</strong> anotameupix@outlook.com</p>
+    <img id="qrCodePix" src="donate.png" alt="QR Code PIX" class="qr-code">
   </div>
+</div>
+
+
 
   <script src="script.js"></script>
 </body>
