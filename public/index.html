@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conselheiro Bíblico Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Conselheiro Bíblico Inteligente</h1>
+
+    <textarea id="textoUsuario" placeholder="Digite sua situação ou tema aqui..."></textarea>
+
+    <div class="acoes">
+      <button onclick="buscarResposta('conselho')">Pedir Conselho</button>
+      <button onclick="buscarResposta('tema')">Buscar Tema na Bíblia</button>
+      <button class="contribuir" onclick="mostrarContribuicao()">❤️ Contribuir</button>
+    </div>
+
+    <div id="resultado" style="display:none;"></div>
+  </div>
+
+  <div class="termos" id="termosAceite">
+    <p>
+      Este site oferece conselhos baseados em princípios bíblicos. O conteúdo não substitui aconselhamento profissional, médico ou psicológico.
+    </p>
+    <input type="checkbox" id="aceiteTermos">
+    <label for="aceiteTermos">Li e concordo com os termos acima.</label>
+    <button onclick="aceitarTermos()">Confirmar</button>
+  </div>
+
+  <!-- Modal Contribuição -->
+  <div id="modalContribuir" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharContribuicao()">&times;</span>
+      <h2>Apoie nosso projeto 🙏</h2>
+      <p>Sua contribuição é fundamental para continuarmos.</p>
+      <button onclick="window.open('https://www.paypal.com/seulink', '_blank')">Doar com PayPal</button>
+      <p><strong>PIX:</strong> sua-chave-pix-aqui</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

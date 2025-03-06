@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "tema": "fé",
+    "conselho": "Confie em Deus em todas as circunstâncias, pois Ele é fiel para cumprir suas promessas.",
+    "versiculo": "Hebreus 10:23 - Apeguemo-nos com firmeza à esperança que professamos, pois aquele que prometeu é fiel.",
+    "tags": ["fé", "confiança", "promessas"]
+  },
+  {
+    "id": 2,
+    "tema": "fé",
+    "conselho": "Busque diariamente fortalecer sua fé através da oração e leitura da palavra.",
+    "versiculo": "Romanos 10:17 - Portanto, a fé vem por ouvir, e ouvir pela palavra de Deus.",
+    "tags": ["fé", "oração", "bíblia"]
+  },
+  {
+    "id": 3,
+    "tema": "fé",
+    "conselho": "Mantenha sua confiança em Deus, mesmo quando você não entender os caminhos Dele.",
+    "versiculo": "Provérbios 3:5 - Confie no Senhor de todo o seu coração e não se apoie em seu próprio entendimento.",
+    "tags": ["fé", "confiança", "dependência"]
+  },
+  {
+    "id": 4,
+    "tema": "fé",
+    "conselho": "Agradeça a Deus sempre, pois a gratidão fortalece e alimenta a fé.",
+    "versiculo": "1 Tessalonicenses 5:18 - Em tudo deem graças, porque esta é a vontade de Deus para vocês em Cristo Jesus.",
+    "tags": ["fé", "gratidão"]
+  },
+  {
+    "id": 5,
+    "tema": "fé",
+    "conselho": "A fé verdadeira é demonstrada por ações; viva aquilo que você acredita.",
+    "versiculo": "Tiago 2:17 - Assim também a fé, por si só, se não for acompanhada de obras, está morta.",
+    "tags": ["fé", "ações"]
+  },
+  {
+    "id": 6,
+    "tema": "fé",
+    "conselho": "Permaneça firme na fé durante as provas, pois elas produzem crescimento espiritual.",
+    "versiculo": "Tiago 1:3 - Pois vocês sabem que a prova da sua fé produz perseverança.",
+    "tags": ["fé", "provas", "perseverança"]
+  },
+  {
+    "id": 7,
+    "tema": "fé",
+    "conselho": "Não deixe que as dúvidas abalem sua fé; leve todas elas ao Senhor em oração.",
+    "versiculo": "Marcos 9:24 - Imediatamente o pai do menino exclamou: 'Creio, ajuda-me a vencer a minha incredulidade!'.",
+    "tags": ["fé", "dúvida", "oração"]
+  },
+  {
+    "id": 8,
+    "tema": "fé",
+    "conselho": "Busque relacionamentos que fortaleçam sua fé e te aproximem de Deus.",
+    "versiculo": "Provérbios 27:17 - Como o ferro afia o ferro, assim um amigo afia outro amigo.",
+    "tags": ["fé", "amizade", "comunhão"]
+  },
+  {
+    "id": 9,
+    "tema": "fé",
+    "conselho": "Cultive uma vida de intimidade com Deus para que sua fé seja autêntica e constante.",
+    "versiculo": "Salmos 25:14 - O Senhor confia os seus segredos aos que o temem, e os leva a conhecer a sua aliança.",
+    "tags": ["fé", "intimidade", "relacionamento com Deus"]
+  },
+  {
+    "id": 10,
+    "tema": "fé",
+    "conselho": "Recorde-se regularmente das maravilhas e bênçãos de Deus para fortalecer sua fé.",
+    "versiculo": "Salmos 103:2 - Bendiga o Senhor a minha alma! Não esqueça nenhuma das suas bênçãos.",
+    "tags": ["fé", "memória", "bênçãos"]
+  },
+  {
+    "id": 11,
+    "tema": "fé",
+    "conselho": "Mesmo quando não vir a resposta imediata de Deus, continue firme na fé.",
+    "versiculo": "Hebreus 11:1 - Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos.",
+    "tags": ["fé", "esperança", "paciência"]
+  }
+]
