@@ -1,70 +1,94 @@
-// Aceitar termos
-function aceitarTermos() {
-  const checkbox = document.getElementById('aceiteTermos');
-  if (!checkbox.checked) {
-    alert("Você precisa aceitar os termos para continuar.");
-    return;
-  }
-  document.getElementById('termosAceite').style.display = 'none';
+// URL da API do backend no Netlify
+const API_URL = "const API_URL = "https://conselheirobiblico.netlify.app/.netlify/functions/api";
+";
+
+// Função para buscar conselho na API
+async function pedirConselho() {
+    const textoUsuario = document.getElementById("inputTexto").value.trim();
+
+    if (!textoUsuario) {
+        alert("Por favor, digite uma pergunta antes de pedir um conselho.");
+        return;
+    }
+
+    try {
+        const resposta = await fetch(`${API_URL}/advice`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ texto: textoUsuario })
+        });
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao buscar conselho. Tente novamente.");
+        }
+
+        const data = await resposta.json();
+
+        document.getElementById("resultado").innerHTML = `
+            <h3>Conselho:</h3>
+            <p>${data.conselho}</p>
+            <h3>Versículo relacionado:</h3>
+            <p>${data.versiculo}</p>
+        `;
+
+    } catch (erro) {
+        console.error("Erro:", erro);
+        document.getElementById("resultado").innerHTML = `<p style="color:red;">Erro ao buscar conselho. Tente novamente.</p>`;
+    }
 }
 
-async function buscarResposta(tipo) {
-  const termosAceitos = document.getElementById('termosAceite').style.display === 'none';
-  if (!termosAceitos) {
-    alert("Aceite os termos antes de continuar!");
-    return;
-  }
+// Função para buscar versículos sobre um tema
+async function buscarTema() {
+    const tema = document.getElementById("inputTexto").value.trim();
 
-  const texto = document.getElementById('textoUsuario').value.trim();
-  if (!texto) {
-    alert("Digite claramente sua situação ou tema.");
-    return;
-  }
+    if (!tema) {
+        alert("Digite um tema para buscar na Bíblia.");
+        return;
+    }
 
-  let url = (tipo === 'conselho') ? '/api/advice' : `/api/tema/${texto.toLowerCase()}`;
-  let options = (tipo === 'conselho') ? {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({texto})
-  } : {};
+    try {
+        const resposta = await fetch(`${API_URL}/tema/${encodeURIComponent(tema)}`);
 
-  const res = await fetch(url, options);
-  const resultado = await res.json();
+        if (!resposta.ok) {
+            throw new Error("Erro ao buscar versículos.");
+        }
 
-  if (resultado.error) {
-    alert(resultado.error);
-    return;
-  }
+        const data = await resposta.json();
 
-  let html = '';
+        if (data.error) {
+            document.getElementById("resultado").innerHTML = `<p style="color:red;">Tema não encontrado na Bíblia.</p>`;
+            return;
+        }
 
-  if (tipo === 'conselho') {
-    html = `<h3>Conselho para você:</h3><p>${resultado.conselho}</p><p><strong>${resultado.versiculo}</strong></p>`;
-  } else {
-    html = `<h3>Versículos sobre "${texto}":</h3><ul>`;
-    resultado.forEach(item => {
-      html += `<li><strong>${item.versiculo}</strong>: ${item.conselho}</li>`;
-    });
-    html += "</ul>";
-  }
+        let listaVersiculos = "<h3>Passagens Bíblicas:</h3><ul>";
+        data.forEach(item => {
+            listaVersiculos += `<li><strong>${item.versiculo}</strong>: ${item.texto}</li>`;
+        });
+        listaVersiculos += "</ul>";
 
-  document.getElementById('resultado').innerHTML = html;
-  document.getElementById('resultado').style.display = 'block';
+        document.getElementById("resultado").innerHTML = listaVersiculos;
+
+    } catch (erro) {
+        console.error("Erro:", erro);
+        document.getElementById("resultado").innerHTML = `<p style="color:red;">Erro ao buscar tema. Tente novamente.</p>`;
+    }
 }
 
-// Modal Contribuir
+// Modal de Contribuição
 function mostrarContribuicao() {
-  document.getElementById('modalContribuir').style.display = 'flex';
+    document.getElementById("modalContribuir").style.display = "flex";
 }
 
 function fecharContribuicao() {
-  document.getElementById('modalContribuir').style.display = 'none';
+    document.getElementById("modalContribuir").style.display = "none";
 }
 
-// Fechar modal clicando fora
+// Fechar modal ao clicar fora dele
 window.onclick = function(event) {
-  const modal = document.getElementById('modalContribuir');
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
+    const modal = document.getElementById("modalContribuir");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
